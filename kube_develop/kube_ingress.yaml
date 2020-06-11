@@ -16,7 +16,7 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: authenticationservice
+          serviceName: notificationservice
           servicePort: 80
   tls:
   - hosts:

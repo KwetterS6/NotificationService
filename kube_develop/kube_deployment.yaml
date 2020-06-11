@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kwetservice
+  name: notificationservice
   namespace: kwetter-development
   labels:
-    app: kwetservice
+    app: notificationservice
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: kwetservice
+      app: notificationservice
   template:
     metadata:
       labels:
-        app: kwetservice
+        app: notificationservice
     spec:
       containers:
-      - image: docker.pkg.github.com/kwetters6/kwetservice/kwetservice
+      - image: docker.pkg.github.com/kwetters6/notificationservice/notificationservice
         imagePullPolicy: IfNotPresent
-        name: kwetservice
+        name: notificationservice
         ports: 
         - containerPort: 80
         resources:
