@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notificationservice
+  namespace: kwetter-development
+  labels:
+    app: notificationservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notificationservice
+  template:
+    metadata:
+      labels:
+        app: notificationservice
+    spec:
+      containers:
+      - image: docker.pkg.github.com/kwetters6/notificationservice/notificationservice
+        imagePullPolicy: IfNotPresent
+        name: notificationservice
+        ports: 
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 100m
+            memory: 128Mi
+          requests:
+            cpu: 50m
+            memory: 64Mi
+      imagePullSecrets:
+      - name: github-docker-registry
