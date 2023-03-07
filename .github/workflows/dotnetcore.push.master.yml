@@ -88,7 +88,7 @@ jobs:
           name: kubernetes-artifact
           path: ./kube_development
 
-      - uses: Azure/setup-kubectl@v1
+      - uses: Azure/setup-kubectl@v3
 
       - uses: Azure/k8s-set-context@v1
         with:
